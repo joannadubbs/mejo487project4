@@ -1,0 +1,106 @@
+@supports(grid-area:auto){
+
+.site{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto auto 400px 500px 400px 400px 400px auto 400px auto auto;
+  grid-template-areas:
+    'nv nv nv nv nv nv'
+    '. by by by by .'
+    '. intro intro intro intro .'
+    'map map map map map map'
+    '. info info info info .'
+    '. chart chart chart chart .'
+    '. info2 info2 info2 info2 .'
+    '. budget-head budget-head budget-head budget-head .'
+    '. budget budget budget budget .'
+    '. art-head art-head art-head art-head .'
+    '. art art art art .';
+    grid-gap:0.5em;
+    font-family: Helvetica;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topnav{
+  grid-area: nv;
+  margin-bottom: -10px;
+}
+
+.byline{
+  grid-area:by;
+  font-size: 15px;
+}
+
+#intro{
+  grid-area: intro;
+  background: #dddddd;
+}
+
+#map{
+  grid-area:map;
+  background: #ddcc;
+  height:100%;
+}
+
+#info-section{
+  grid-area: info;
+  background: #dddddd;
+}
+
+#chart{
+  grid-area: chart;
+  background: #dddddd;
+}
+
+#info-section2{
+  grid-area: info2;
+  background: #dddddd;
+}
+
+.budget-head{
+  grid-area: budget-head;
+}
+
+#budget{
+  grid-area: budget;
+  background: #dddddd;
+}
+
+.art-head{
+  grid-area:art-head;
+}
+
+#articles{
+  grid-area:art;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.latest-news{
+  border: 1px solid #dddddd;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #cccccc;
+
+}
+
+.thumbnail{
+  flex-basis: 20%;
+  max-width: 20%;
+  height:auto;
+  margin-right: 10px;
+
+}
+
+.text{
+  flex-basis: 80%;
+}
