@@ -1,13 +1,26 @@
+// In the following example, markers appear when the user clicks on the map.
+// Each marker is labeled with a single alphabetical character.
+var labels = '123456789';
+var labelIndex = 0;
+
   // Initialize and add the map
   function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    var oldWell = {lat:35.9120729, lng:-79.0515091};
-    var kC = {lat:39.0915837, lng:-94.8559049};
-    // The map, centered at Uluru
 
-  var contentString = '<h3> UNC is awesome</h3>';
-  var chosenPano = kC;
+    var tulum = {lat:20.2096165, lng:-87.5068955};
+    var amsterdam = {lat:52.3545653, lng:4.7585408};
+    var greek = {lat: 37.3505938, lng: 21.6949874};
+    var mexicocity = {lat: 19.3204434, lng: -99.2926982};
+    var maldives= {lat: -0.7190938, lng: 72.9293092};
+    var algarve = {lat: 37.2450904, lng: -8.4753918};
+    var marrakesh = {lat: 31.6346023, lng: -8.077893};
+    var positano = {lat: 40.627271, lng: 14.4849303};
+    var cappadocia = {lat: 38.474839, lng: 35.3678906};
+    var bali = {lat: -8.4553718, lng: 114.791387};
+
+    // The map, centered at
+
+  var contentString = '<p> Tulum, Mexico</p>';
+  var chosenPano = amsterdam;
 
   var infowindow  = new google.maps.InfoWindow({
   content: contentString
@@ -15,16 +28,90 @@
 
     var map = new google.maps.Map(
         document.getElementById('map'), {
-          zoom: 6,
-          center: kC
+          zoom:2,
+          center:positano
         });
 
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({
-      position: oldWell,
+      position: tulum,
       map: map,
       animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
       //icon: './img/tarheel.png' GIANT MARKER
+
+    });
+
+    var marker2 = new google.maps.Marker({
+      position: amsterdam,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker3 = new google.maps.Marker({
+      position: greek,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker4 = new google.maps.Marker({
+      position: mexicocity,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker5 = new google.maps.Marker({
+      position: maldives,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker6 = new google.maps.Marker({
+      position: algarve,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker7 = new google.maps.Marker({
+      position: marrakesh,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker8 = new google.maps.Marker({
+      position: positano,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker9 = new google.maps.Marker({
+      position: cappadocia,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      label: labels[labelIndex++ % labels.length],
+
+    });
+
+    var marker10 = new google.maps.Marker({
+      position: bali,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      markerLabel: '10'//NOT WORKING
+
 
     });
 
@@ -33,18 +120,18 @@
     marker.addListener('click', function(){
       console.log('testing');
       infoSection.innerHTML = contentString;
-      chosenPano = oldWell;
+      chosenPano = tulum;
       initmap();
     });
 
     //add a polyline
-      var flightPath = new google.maps.Polyline({
-      path: [oldWell, kC, uluru, oldWell],
-      geodesic: true,
-      strokeColor: '#000000',
-      strokeOpacity: 1.0,
-      strokeWeight: 2
-    });
+    //  var flightPath = new google.maps.Polyline({
+    //  path: [tulum, amsterdam, uluru, tulum],
+    //  geodesic: true,
+      //strokeColor: '#000000',
+    //  strokeOpacity: 1.0,
+    //  strokeWeight: 2
+  //  });
 
     flightPath.setMap(map);
 
@@ -57,7 +144,6 @@
         }
       });
   }
-
 
 //News API--> Explore Related Articles
 var myKey = config.MY_KEY; //Sets myKey variable = API key
@@ -104,3 +190,15 @@ fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&c
     .catch(function() {
         // Code for handling errors
     });
+
+    //JS Event to Filter City Instagram Content
+    $('#destinations').on('change', function(){
+            var theVal = $(this).val();
+            $('.city').addClass('hidden');
+        	$('.city#city' + theVal).removeClass('hidden');
+        });
+
+        //Get Google Marker to Toggle Instagram Content
+    //  $('marker1').onclick = function(){
+            //    $('#city1').addClass('hidden');
+          //  });

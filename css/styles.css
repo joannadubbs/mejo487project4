@@ -8,7 +8,7 @@
     'nv nv nv nv nv nv'
     '. by by by by .'
     '. intro intro intro intro .'
-    'map map map map map map'
+    '. map map map map .'
     '. info info info info .'
     '. chart chart chart chart .'
     '. info2 info2 info2 info2 .'
@@ -24,6 +24,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.flex-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../img/parallax.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .topnav{
@@ -103,4 +124,20 @@ a{
 
 .text{
   flex-basis: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+#destinations{
+ background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.city{
+  font-size: 16px;
+  color:black;
 }
