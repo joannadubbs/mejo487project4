@@ -110,7 +110,7 @@ var labelIndex = 0;
       position: bali,
       map: map,
       animation: google.maps.Animation.DROP,
-      markerLabel: '10'//NOT WORKING
+    //  markerLabel: '10'//NOT WORKING
 
 
     });
@@ -133,8 +133,6 @@ var labelIndex = 0;
     //  strokeWeight: 2
   //  });
 
-    flightPath.setMap(map);
-
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
         position: chosenPano,
@@ -148,7 +146,7 @@ var labelIndex = 0;
 //News API--> Explore Related Articles
 var myKey = config.MY_KEY; //Sets myKey variable = API key
 
-var url = 'https://newsapi.org/v2/everything?q=tripadvisor+traveling&from=2018-11-01&sortBy=publishedAt&apiKey=' + myKey;
+var url = 'https://newsapi.org/v2/everything?q=tripadvisor+traveling&from=2018-11-05&sortBy=publishedAt&apiKey=' + myKey;
 var data = [];
 var html = '';
 var articles = [];
@@ -180,17 +178,6 @@ $.ajax({
 
 }); //closes ajax request
 
-var clientID = config.CLIENT_ID; //Sets myKey variable = API key
-var clientSecret = config.CLIENT_SECRET; //Sets myKey variable = API key
-
-fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=1&ll=40.7243,-74.0018&query=coffee')
-    .then(function() {
-        // Code for handling API response
-    })
-    .catch(function() {
-        // Code for handling errors
-    });
-
     //JS Event to Filter City Instagram Content
     $('#destinations').on('change', function(){
             var theVal = $(this).val();
@@ -202,3 +189,25 @@ fetch('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&c
     //  $('marker1').onclick = function(){
             //    $('#city1').addClass('hidden');
           //  });
+
+//FourSquare API
+          var clientID = config.CLIENT_ID; //Sets myKey variable = API key
+          var clientSecret = config.CLIENT_SECRET; //Sets myKey variable = API key
+
+          var url2 = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=1&ll=40.7243,-74.0018&query=coffee';
+          var data2 = [];
+          var html2 = '';
+          var photos = [];
+
+          $.ajax({
+            type:'GET',
+            url:url2,
+            dataType: 'json',
+            async: true,
+            data: data2,
+            success: function(data2){
+              console.log(data2);
+
+            } //success
+
+          }); //closes ajax request

@@ -3,21 +3,23 @@
 .site{
   display:grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto 400px 500px 400px 400px 400px auto 400px auto auto;
+  grid-template-rows: auto auto auto 500px auto 400px 400px auto 400px auto auto auto;
   grid-template-areas:
     'nv nv nv nv nv nv'
     '. by by by by .'
     '. intro intro intro intro .'
     '. map map map map .'
-    '. info info info info .'
     '. chart chart chart chart .'
+    '. info info info info .'
     '. info2 info2 info2 info2 .'
     '. budget-head budget-head budget-head budget-head .'
     '. budget budget budget budget .'
     '. art-head art-head art-head art-head .'
-    '. art art art art .';
+    '. art art art art .'
+    '. src src src src .';
     grid-gap:0.5em;
     font-family: Helvetica;
+
 }
 
 .flex{
@@ -35,7 +37,7 @@
 
 .parallax {
     /* The image used */
-    background-image: url("../img/parallax.jpg");
+    background-image: url("../img/parallax2.jpg");
 
     /* Set a specific height */
     min-height: 500px;
@@ -59,7 +61,8 @@
 
 #intro{
   grid-area: intro;
-  background: #dddddd;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 #map{
@@ -75,7 +78,7 @@
 
 #chart{
   grid-area: chart;
-  background: #dddddd;
+  padding-bottom: 10px;
 }
 
 #info-section2{
@@ -98,6 +101,10 @@
 
 #articles{
   grid-area:art;
+}
+
+.sources{
+  grid-area:src;
 }
 
 a{
@@ -131,7 +138,7 @@ a{
 }
 
 #destinations{
- background-color: #3498DB;
+    background-color: #254F73;
     color: white;
     padding: 16px;
     font-size: 14px;
