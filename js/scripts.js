@@ -19,13 +19,6 @@ var labelIndex = 0;
 
     // The map, centered at
 
-  var contentString = '<p> Tulum, Mexico</p>';
-  var chosenPano = amsterdam;
-
-  var infowindow  = new google.maps.InfoWindow({
-  content: contentString
-  });
-
     var map = new google.maps.Map(
         document.getElementById('map'), {
           zoom:2,
@@ -190,11 +183,48 @@ $.ajax({
             //    $('#city1').addClass('hidden');
           //  });
 
-//FourSquare API
+          //FourSquare API
           var clientID = config.CLIENT_ID; //Sets myKey variable = API key
           var clientSecret = config.CLIENT_SECRET; //Sets myKey variable = API key
+          var latlong = [
+          { "Tulum, Mexico" :
+            {lat:20.2096165, lng:-87.5068955}
+            },
+          { "Amsterdam, Netherlands" :
+            {lat:52.3545653, lng:4.7585408}
+            },
+          { "Greek Islands" :
+            {lat: 37.3505938, lng: 21.6949874}
+            },
+          { "Mexico City, Mexico" :
+            {lat: 19.3204434, lng: -99.2926982}
+            },
+          { "The Maldives" :
+            {lat: -0.7190938, lng: 72.9293092}
+            },
+          { "Algarve, Portugal" :
+            {lat: 37.2450904, lng: -8.4753918}
+            },
+          { "Marrakesh, Morocco" :
+            {lat: 31.6346023, lng: -8.077893}
+            },
+          { "Positano, Italy" :
+            {lat: 40.627271, lng: 14.4849303}
+            },
+          { "Cappadocia, Turkey" :
+            {lat: 38.474839, lng: 35.3678906}
+            },
+          { "Bali, Indonesia" :
+            {lat: -8.4553718, lng: 114.791387}
+            }
+        ]
 
-          var url2 = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=1&ll=40.7243,-74.0018&query=coffee';
+        for (var i = 0; i < latlong.length; i++) {
+          console.log(latlong[i]);
+        }
+
+
+          var url2 = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=1&ll='+latlong[i].lat + ',' + latlong[i].lng + '&query=coffee';
           var data2 = [];
           var html2 = '';
           var photos = [];
