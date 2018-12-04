@@ -107,7 +107,7 @@ var labelIndex = 0;
 
 
 
-    // The map, centered at
+    // The map, centered at Positano
 
     var map = new google.maps.Map(
         document.getElementById('map'), {
@@ -115,14 +115,35 @@ var labelIndex = 0;
           center:positano
         });
 
-    // The marker, positioned at Uluru
+        var contentString = '<div id="content">'+
+        '<p><strong>Tulum, Mexico</strong></p>'+
+        '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+          });
+
+    // The marker, positioned at Tulum, Mexico
     var marker = new google.maps.Marker({
       position: tulum,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
+      title: 'Tulum, Mexico',
 
     });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+
+    var contentString2 = '<div id="content2">'+
+    '<p><strong>Amsterdam, Netherlands</strong></p>'+
+    '</div>';
+
+    var infowindow2 = new google.maps.InfoWindow({
+      content: contentString2
+      });
 
     var marker2 = new google.maps.Marker({
       position: amsterdam,
@@ -132,21 +153,57 @@ var labelIndex = 0;
 
     });
 
+    marker2.addListener('click', function() {
+      infowindow2.open(map, marker2);
+    });
+
+//Adds Info Window for Greek Islands
+  var contentString3 = '<div id="content3">'+
+  '<p><strong>The Greek Islands</strong></p>'+
+  '</div>';
+
+  var infowindow3 = new google.maps.InfoWindow({
+    content: contentString3
+    });
+
     var marker3 = new google.maps.Marker({
       position: greek,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
-
     });
+
+    marker3.addListener('click', function() {
+      infowindow3.open(map, marker3);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString4 = '<div id="content4">'+
+    '<p><strong>Mexico City, Mexico</strong></p>'+
+    '</div>';
+
+    var infowindow4 = new google.maps.InfoWindow({
+      content: contentString4
+      });
 
     var marker4 = new google.maps.Marker({
       position: mexicocity,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
-
     });
+    marker4.addListener('click', function() {
+      infowindow4.open(map, marker4);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString5 = '<div id="content5">'+
+    '<p><strong>The Maldives</strong></p>'+
+    '</div>';
+
+    var infowindow5 = new google.maps.InfoWindow({
+      content: contentString5
+      });
 
     var marker5 = new google.maps.Marker({
       position: maldives,
@@ -156,6 +213,19 @@ var labelIndex = 0;
 
     });
 
+    marker5.addListener('click', function() {
+      infowindow5.open(map, marker5);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString6 = '<div id="content6">'+
+    '<p><strong>Algarve, Portugal</strong></p>'+
+    '</div>';
+
+    var infowindow6 = new google.maps.InfoWindow({
+      content: contentString6
+      });
+
     var marker6 = new google.maps.Marker({
       position: algarve,
       map: map,
@@ -164,37 +234,88 @@ var labelIndex = 0;
 
     });
 
+    marker6.addListener('click', function() {
+      infowindow6.open(map, marker6);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString7 = '<div id="content7">'+
+    '<p><strong>Marrakesh, Morocco</strong></p>'+
+    '</div>';
+
+    var infowindow7 = new google.maps.InfoWindow({
+      content: contentString7
+      });
+
     var marker7 = new google.maps.Marker({
       position: marrakesh,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
-
     });
+
+    marker7.addListener('click', function() {
+      infowindow7.open(map, marker7);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString8 = '<div id="content8">'+
+    '<p><strong>Positano, Italy</strong></p>'+
+    '</div>';
+
+    var infowindow8 = new google.maps.InfoWindow({
+      content: contentString8
+      });
 
     var marker8 = new google.maps.Marker({
       position: positano,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
-
     });
+
+    marker8.addListener('click', function() {
+      infowindow8.open(map, marker8);
+    });
+
+    //Adds Info Window for Greek Islands
+    var contentString9 = '<div id="content9">'+
+    '<p><strong>Cappadocia, Turkey</strong></p>'+
+    '</div>';
+
+    var infowindow9 = new google.maps.InfoWindow({
+      content: contentString9
+      });
 
     var marker9 = new google.maps.Marker({
       position: cappadocia,
       map: map,
       animation: google.maps.Animation.DROP,
       label: labels[labelIndex++ % labels.length],
-
     });
+
+    marker9.addListener('click', function() {
+      infowindow9.open(map, marker9);
+    });
+
+    //Adds Info Window for Bali, Indonesia
+    var contentString10 = '<div id="content10">'+
+    '<p><strong>Bali, Indonesia</strong></p>'+
+    '</div>';
+
+    var infowindow10 = new google.maps.InfoWindow({
+      content: contentString10
+      });
 
     var marker10 = new google.maps.Marker({
       position: bali,
       map: map,
       animation: google.maps.Animation.DROP,
     //  markerLabel: '10'//NOT WORKING
+    });
 
-
+    marker10.addListener('click', function() {
+      infowindow10.open(map, marker10);
     });
 
   }
@@ -202,7 +323,7 @@ var labelIndex = 0;
 //News API--> Explore Related Articles
 var myKey = config.MY_KEY; //Sets myKey variable = API key
 
-var url = 'https://newsapi.org/v2/everything?q=tripadvisor+traveling&from=2018-11-05&sortBy=publishedAt&apiKey=' + myKey;
+var url = 'https://newsapi.org/v2/everything?q=tripadvisor+traveling&from=2018-11-30&sortBy=publishedAt&apiKey=' + myKey;
 var data = [];
 var html = '';
 var articles = [];
