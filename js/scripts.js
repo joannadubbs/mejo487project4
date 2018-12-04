@@ -126,14 +126,6 @@ var labelIndex = 0;
     //  strokeWeight: 2
   //  });
 
-    var panorama = new google.maps.StreetViewPanorama(
-      document.getElementById('pano'), {
-        position: chosenPano,
-        pov: {
-          heading: 34,
-          pitch: 10
-        }
-      });
   }
 
 //News API--> Explore Related Articles
@@ -187,48 +179,28 @@ $.ajax({
           var clientID = config.CLIENT_ID; //Sets myKey variable = API key
           var clientSecret = config.CLIENT_SECRET; //Sets myKey variable = API key
           var latlong = [
-          { "Tulum, Mexico" :
-            {lat:20.2096165, lng:-87.5068955}
-            },
-          { "Amsterdam, Netherlands" :
-            {lat:52.3545653, lng:4.7585408}
-            },
-          { "Greek Islands" :
-            {lat: 37.3505938, lng: 21.6949874}
-            },
-          { "Mexico City, Mexico" :
-            {lat: 19.3204434, lng: -99.2926982}
-            },
-          { "The Maldives" :
-            {lat: -0.7190938, lng: 72.9293092}
-            },
-          { "Algarve, Portugal" :
-            {lat: 37.2450904, lng: -8.4753918}
-            },
-          { "Marrakesh, Morocco" :
-            {lat: 31.6346023, lng: -8.077893}
-            },
-          { "Positano, Italy" :
-            {lat: 40.627271, lng: 14.4849303}
-            },
-          { "Cappadocia, Turkey" :
-            {lat: 38.474839, lng: 35.3678906}
-            },
-          { "Bali, Indonesia" :
-            {lat: -8.4553718, lng: 114.791387}
-            }
+
+            {lat:20.2096165, lng:-87.5068955},//tulum mexico
+            {lat:52.3545653, lng:4.7585408}, //Amsterdam, Netherlands
+            {lat: 37.3505938, lng: 21.6949874}, //Greek Islands
+            {lat: 19.3204434, lng: -99.2926982}, //Mexico City, Mexico
+            {lat: -0.7190938, lng: 72.9293092}, //The Maldives
+            {lat: 37.2450904, lng: -8.4753918}, //Algarve, Portugal
+            {lat: 31.6346023, lng: -8.077893}, //Marrakesh, Morocco
+            {lat: 40.627271, lng: 14.4849303}, //Positano, Italy
+            {lat: 38.474839, lng: 35.3678906}, //Cappadocia, Turkey
+            {lat: -8.4553718, lng: 114.791387} //Bali, Indonesia
+
         ]
 
         for (var i = 0; i < latlong.length; i++) {
           console.log(latlong[i]);
-        }
-
-
-          var url2 = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=1&ll='+latlong[i].lat + ',' + latlong[i].lng + '&query=coffee';
+          var url2 = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&v=20180323&limit=100&ll='+ latlong[i].lat + ',' + latlong[i].lng + '&query=hotels';
           var data2 = [];
           var html2 = '';
           var photos = [];
-
+          //var url2 = 'https://api.foursquare.com/v2/venues/explore?ll=' + latlong[i].lat + ',' + latlong[i].lng + '&limit=30&client_id=' + clientID + '&client_secret=' + clientSecret ;
+        }
           $.ajax({
             type:'GET',
             url:url2,
@@ -236,8 +208,32 @@ $.ajax({
             async: true,
             data: data2,
             success: function(data2){
-              console.log(data2);
+            console.log(data2);
 
-            } //success
+              } //success
 
           }); //closes ajax request
+
+          // Initialize and add the map
+          function initMapvenues() {
+
+            var tulum2 = {lat:20.2096165, lng:-87.5068955};
+
+            // The map, centered at
+
+            var mapvenues = new google.maps.Map(
+                document.getElementById('infoSection'), {
+                  zoom:2,
+                  center:tulum2
+                });
+
+            // The marker, positioned at Uluru
+            var markervenues = new google.maps.Marker({
+              position: tulum,
+              map: markervenues,
+              animation: google.maps.Animation.DROP,
+              label: labels[labelIndex++ % labels.length],
+
+            });
+
+          }
