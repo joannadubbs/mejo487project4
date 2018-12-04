@@ -3,7 +3,7 @@
 .site{
   display:grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto auto 500px auto 400px 400px auto 400px auto auto auto;
+  grid-template-rows: auto auto auto 500px auto 400px 400px 400px auto 400px auto auto auto;
   grid-template-areas:
     'nv nv nv nv nv nv'
     '. by by by by .'
@@ -73,7 +73,7 @@
 
 #info-section{
   grid-area: info;
-  background: #dddddd;
+  background: #ddcc;
 }
 
 #chart{
@@ -147,4 +147,8 @@ a{
 .city{
   font-size: 16px;
   color:black;
+}
+
+.city-map{
+  grid-area:city;
 }

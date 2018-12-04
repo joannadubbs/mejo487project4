@@ -25,6 +25,13 @@ var labelIndex = 0;
           center:positano
         });
 
+    var mapCities = new google.maps.Map(
+            document.getElementById('info-section'), {
+              zoom:9,
+              center:tulum
+            });
+
+
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({
       position: tulum,
@@ -108,24 +115,6 @@ var labelIndex = 0;
 
     });
 
-    var infoSection = document.getElementById('info-section');
-
-    marker.addListener('click', function(){
-      console.log('testing');
-      infoSection.innerHTML = contentString;
-      chosenPano = tulum;
-      initmap();
-    });
-
-    //add a polyline
-    //  var flightPath = new google.maps.Polyline({
-    //  path: [tulum, amsterdam, uluru, tulum],
-    //  geodesic: true,
-      //strokeColor: '#000000',
-    //  strokeOpacity: 1.0,
-    //  strokeWeight: 2
-  //  });
-
   }
 
 //News API--> Explore Related Articles
@@ -163,7 +152,7 @@ $.ajax({
 
 }); //closes ajax request
 
-    //JS Event to Filter City Instagram Content
+    //Vanilla JS Event to Filter City Instagram Content
     $('#destinations').on('change', function(){
             var theVal = $(this).val();
             $('.city').addClass('hidden');
@@ -199,6 +188,11 @@ $.ajax({
           var data2 = [];
           var html2 = '';
           var photos = [];
+          var resp = [];
+          var groups = [];
+          var item = [];
+          var venues = [];
+          var locations = [];
           //var url2 = 'https://api.foursquare.com/v2/venues/explore?ll=' + latlong[i].lat + ',' + latlong[i].lng + '&limit=30&client_id=' + clientID + '&client_secret=' + clientSecret ;
         }
           $.ajax({
@@ -208,32 +202,25 @@ $.ajax({
             async: true,
             data: data2,
             success: function(data2){
-            console.log(data2);
+              console.log(data2.response);
+              console.log(data2.response.groups);
+              groups = data2.response.groups;
+              groups.forEach(function(group){
+                console.log(group);
+                item = group.items;
+                console.log(item);
+                item.forEach(function(places){
+                  console.log(places);
+                  venues = places.venue;
+                  console.log(venues);
+                  locations = places.venue.location;
+                  console.log(locations);
+                });
+              });
+
+
+
 
               } //success
 
           }); //closes ajax request
-
-          // Initialize and add the map
-          function initMapvenues() {
-
-            var tulum2 = {lat:20.2096165, lng:-87.5068955};
-
-            // The map, centered at
-
-            var mapvenues = new google.maps.Map(
-                document.getElementById('infoSection'), {
-                  zoom:2,
-                  center:tulum2
-                });
-
-            // The marker, positioned at Uluru
-            var markervenues = new google.maps.Marker({
-              position: tulum,
-              map: markervenues,
-              animation: google.maps.Animation.DROP,
-              label: labels[labelIndex++ % labels.length],
-
-            });
-
-          }
