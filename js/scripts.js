@@ -101,13 +101,9 @@ var labelIndex = 0;
 
                   }); //closes ajax request
 
-    }
+    } //Closes Window Callback
 
-
-
-
-
-  }
+  } //Closes Mega For Loop
 
 
 
