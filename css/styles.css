@@ -3,16 +3,24 @@
 .site{
   display:grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto auto auto 500px auto 400px 400px auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto 500px auto 40px 40px 400px 40px 400px 40px 400px 40px 400px 40px 400px auto auto auto auto auto;
   grid-template-areas:
     'nv nv nv nv nv nv'
     '. by by by by .'
     '. intro intro intro intro .'
     '. map map map map .'
     '. chart chart chart chart .'
-    '. info info info info .'
-    '. info2 info2 info2 info2 .'
     '. budget-head budget-head budget-head budget-head .'
+    '. chd1 chd1 chd2 chd2 .'
+    '. info info info2 info2 .'
+    '. chd3 chd3 chd4 chd4 .'
+    '. info3 info3 info4 info4 .'
+    '. chd5 chd5 chd6 chd6 .'
+    '. info5 info5 info6 info6 .'
+    '. chd7 chd7 chd8 chd8 .'
+    '. info7 info7 info8 info8 .'
+    '. chd9 chd9 chd10 chd10 .'
+    '. info9 info9 info10 info10 .'
     '. budget budget budget budget .'
     '. art-head art-head art-head art-head .'
     '. art art art art .'
@@ -91,6 +99,90 @@
   background: #dddddd;
 }
 
+#info-section3{
+  grid-area: info3;
+  background: #dddddd;
+}
+
+#info-section4{
+  grid-area: info4;
+  background: #dddddd;
+}
+
+#info-section5{
+  grid-area: info5;
+  background: #dddddd;
+}
+
+#info-section6{
+  grid-area: info6;
+  background: #dddddd;
+}
+
+#info-section7{
+  grid-area: info7;
+  background: #dddddd;
+}
+
+#info-section8{
+  grid-area: info8;
+  background: #dddddd;
+}
+
+#info-section9{
+  grid-area: info9;
+  background: #dddddd;
+}
+
+#info-section10{
+  grid-area: info10;
+  background: #dddddd;
+}
+
+#city-map-header1{
+  grid-area:chd1;
+}
+
+.city-map-header{
+  text-align: center;
+  font-size: 18px;
+}
+
+#city-map-header2{
+  grid-area:chd2;
+}
+
+#city-map-header3{
+  grid-area:chd3;
+}
+
+#city-map-header4{
+  grid-area:chd4;
+}
+
+#city-map-header5{
+  grid-area:chd5;
+}
+
+#city-map-header6{
+  grid-area:chd6;
+}
+
+#city-map-header7{
+  grid-area:chd7;
+}
+
+#city-map-header8{
+  grid-area:chd8;
+}
+
+#city-map-header9{
+  grid-area:chd9;
+}
+
+#city-map-header10{
+  grid-area:chd10;
+}
 .budget-head{
   grid-area: budget-head;
 }

@@ -47,11 +47,66 @@ var labelIndex = 0;
     var locations = [];
     var latlongvenues = [];
 
-            var mapCities = new google.maps.Map(
-                    document.getElementById('info-section'), {
-                      zoom:4,
-                      center:tulum
-                    });
+
+    var mapCities1 = new google.maps.Map(
+      document.getElementById('info-section'), {
+      zoom:7,
+      center:tulum
+      });
+
+    var mapCities2 = new google.maps.Map(
+      document.getElementById('info-section2'), {
+      zoom:7,
+      center:amsterdam
+      });
+
+    var mapCities3 = new google.maps.Map(
+      document.getElementById('info-section3'), {
+      zoom:7,
+      center:greek
+      });
+
+    var mapCities4 = new google.maps.Map(
+      document.getElementById('info-section4'), {
+      zoom:7,
+      center:mexicocity
+      });
+
+    var mapCities5 = new google.maps.Map(
+      document.getElementById('info-section5'), {
+      zoom:7,
+      center:maldives
+      });
+
+    var mapCities6 = new google.maps.Map(
+      document.getElementById('info-section6'), {
+      zoom:7,
+      center:algarve
+      });
+
+    var mapCities7 = new google.maps.Map(
+      document.getElementById('info-section7'), {
+      zoom:7,
+      center:marrakesh
+      });
+
+    var mapCities8 = new google.maps.Map(
+     document.getElementById('info-section8'), {
+     zoom:7,
+     center:positano
+     });
+
+    var mapCities9 = new google.maps.Map(
+     document.getElementById('info-section9'), {
+     zoom:7,
+     center:cappadocia
+     });
+
+    var mapCities10 = new google.maps.Map(
+     document.getElementById('info-section10'), {
+     zoom:7,
+     center:bali
+     });
 
             // Loop through the results array and place a marker for each
     // set of coordinates.
@@ -311,7 +366,7 @@ var labelIndex = 0;
       position: bali,
       map: map,
       animation: google.maps.Animation.DROP,
-    //  markerLabel: '10'//NOT WORKING
+      label: '10',
     });
 
     marker10.addListener('click', function() {
