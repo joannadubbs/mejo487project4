@@ -18,7 +18,9 @@
     '. art art art art .'
     '. src src src src .';
     grid-gap:0.5em;
-    font-family: Helvetica;
+    font-family: Georgia;
+    background-color: #FCF8F0;
+
 
 }
 
@@ -55,7 +57,7 @@
   color:#343434;
 }
 
-.byline{
+.byline-intro{
   grid-area:by;
   font-size: 15px;
 }
@@ -156,6 +158,10 @@ a{
   grid-area:city;
 }
 
+.sources{
+  font-size: 8px;
+  margin-left: 15px;
+}
 /*Sets Mobile Display*/
 @media screen and (max-width:767px){
 
@@ -191,5 +197,8 @@ a{
   font-size:8px;
 }
 
+h1{
+  text-align: center;
+}
 
 } /*Closes Media Query*/
