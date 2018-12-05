@@ -38,7 +38,7 @@
       <br /><br />
       Earth, a travel media company based in New York City, used data from over 100,000 of their millennial Instagram followers from July 2017 to 2018 to rank the top 10 travel destinations amongst millennials.
       <br /> <br /><br />
-      <u><i>Earth ranked the following cities as the top millennial travel destinations:</i></u>
+      <u><i>Earth ranked the following places as the top millennial travel destinations:</i></u>
       <br /><br />
       <strong>
       1.Tulum, Mexico<br />
@@ -52,10 +52,10 @@
       9. Cappadocia, Turkey<br />
       10. Bali, Indonesia</strong>
 
-    </div>
+    </div> <!--Drop down menu--->
     <div id="map"></div>
     <div class="flex-column" id="chart">
-      <h3><i>Want to Explore one of these Cities?</i></h3>
+      <h3><i>Want to Explore one of these Destinations?</i></h3>
       <select name="Select" id="destinations">
         <option>Select a City</option>
         <option value="1" id="city1">Tulum, Mexico</option>
@@ -68,7 +68,6 @@
         <option value="8" id="city8">Positano, Italy</option>
         <option value="9" id="city9">Cappadocia, Turkey</option>
         <option value="10" id="city10">Bali, Indonesia</option>
-
       </select>
 
       <div class="city hidden" id="city1">
@@ -112,6 +111,8 @@
           <iframe width="560" height="315" src="https://www.youtube.com/embed/dbOT1YT1kaw?start=14&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+
+    <!--Headers & Maps for Individual Maps for each of the 10 cities--->
     <h3 class="budget-head flex"><u>Top Places to Visit in Each City</u></h3>
     <p class="city-map-header" id="city-map-header1">Tulum, Mexico</p>
     <p class="city-map-header" id="city-map-header2">Amsterdam, Netherlands</p>
@@ -136,10 +137,13 @@
     <div id="budget">
     </div>
 
+    <!--Related Articles Header--->
     <h4 class="art-head flex">Explore Related Articles: </h4>
     <div id="articles">
     <!---content will go here--->
     </div>
+
+    <!--Related Articles--->
     <div class="sources">
       <p>“Airbnb and the Rise of Millennial Travel.” Airbnb, Airbnb, 26 Nov. 2016, 2sqy5r1jf93u30kwzc1smfqt-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/MillennialReport.pdf.
         <br /><br />
@@ -162,7 +166,7 @@
         Airplane Photo. cdn-images-1.medium.com/max/1330/1*_6EdJgpcWyeWne36eFH7eA@2x.jpeg.</p>
     </div>
 
-
+    <!--jQuery--->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKQostkAwSKT_dQbe4iDLFWY03mPVz-b0&callback=initMap" async defer></script>
 
