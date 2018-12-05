@@ -37,7 +37,7 @@
 
 .parallax {
     /* The image used */
-    background-image: url("../img/parallax2.jpg");
+    background-image: url("../img/parallax3.jpg");
 
     /* Set a specific height */
     min-height: 500px;
@@ -52,6 +52,7 @@
 .topnav{
   grid-area: nv;
   margin-bottom: -10px;
+  color:#343434;
 }
 
 .byline{
@@ -63,6 +64,8 @@
   grid-area: intro;
   margin-top: 30px;
   margin-bottom: 15px;
+  text-align: center;
+
 }
 
 #map{
@@ -178,6 +181,10 @@ a{
 
   #articles{
     font-size:8px;
+  }
+
+  #intro{
+    text-align: center;
   }
 
 .byline{

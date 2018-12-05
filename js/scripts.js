@@ -63,26 +63,26 @@ var labelIndex = 0;
         async: true,
         data: data2,
         success: function(data2){
-          //console.log(data2.response);
-          //console.log(data2.response.groups);
+          console.log(data2.response);
+          console.log(data2.response.groups);
           groups = data2.response.groups;
           groups.forEach(function(group){
-            //console.log(group);
+              console.log(group);
             item = group.items;
-            //console.log(item);
+              console.log(item);
             item.forEach(function(places){
-            //  console.log(places);
+              console.log(places);
               venues = places.venue;
-            //  console.log(venues);
+              console.log(venues);
               locations = places.venue.location;
-              //console.log(locations);
+              console.log(locations);
               var latvenues = locations.lat;
               var lngvenues = locations.lng;
-              //console.log(latvenues);
-              //console.log(lngvenues);
+              console.log(latvenues);
+              console.log(lngvenues);
               var pushItems = {'coordinates': [latvenues, lngvenues]};
               latlongvenues.push(pushItems);
-              // console.log(pushItems);
+              console.log(pushItems);
               for (var j = 0; j < results.pushItems.length; j++) {
                 var coords = results.pushItems[j].coordinates;
                 console.log(coords);
@@ -280,7 +280,7 @@ var labelIndex = 0;
 
     //Adds Info Window for Greek Islands
     var contentString9 = '<div id="content9">'+
-    '<p><strong>Cappadocia, Turkey</strong></p>'+
+    '<p><strong>Cappadocia, </strong></p>'+
     '</div>';
 
     var infowindow9 = new google.maps.InfoWindow({
